@@ -12,3 +12,8 @@ $ forge update
 ```bash
 foundry build
 ```
+
+## Deployment:
+```bash
+forge script script/Counter.s.sol:CounterScript  --rpc-url $RPC_URL --broadcast -i 1 --sender $YOUR_ADDRESS
+```
