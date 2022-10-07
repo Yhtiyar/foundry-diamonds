@@ -19,6 +19,11 @@ foundry build
 ```bash
 forge script script/Counter.s.sol:CounterScript  --rpc-url $RPC_URL --broadcast -i 1 --sender $YOUR_ADDRESS
 ```
+## Test:
+```bash
+forge test
+```
+
 ## Generating `diamondCuts`:
 Unfortunately solidity doesn't support iteration through the contrac functions, so you will need manually write each selector.
 But you can use the solidity code generator that I've written for this template:
