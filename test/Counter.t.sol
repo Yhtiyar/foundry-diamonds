@@ -55,8 +55,17 @@ contract CounterTest is Test {
 
     function testIncrement() public {
         CounterFacet counter = CounterFacet(address(diamondContract));
+        uint256 before = counter.getNumber();
         counter.increment();
-        assertEq(counter.getNumber(), 1);
+        assertEq(counter.getNumber(), before + 1);
+    }
+
+    function testDecrement() public {
+        CounterFacet counter = CounterFacet(address(diamondContract));
+        uint256 before = counter.getNumber();
+        if (before == 0) return;
+        DecrementFacet(address(diamondContract)).decrement();
+        assertEq(counter.getNumber(), before - 1);
     }
 
     function testSetNumber(uint256 x) public {
