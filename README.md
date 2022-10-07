@@ -12,7 +12,7 @@ $ forge update
 ```
 * build
 ```bash
-foundry build
+forge build
 ```
 
 ## Deployment:
